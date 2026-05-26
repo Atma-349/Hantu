@@ -40,27 +40,13 @@ window.addEventListener("scroll", () => {
   });
 });
 
+function kirimPesan() {
+  ["f-nama","f-email","f-hp","f-korban","f-alamat","f-hantu","f-level","f-pesan"]
+    .forEach(id => document.getElementById(id).value = "");
+}
+
 function tutupDisclaimer() {
   const el = document.getElementById("disclaimer");
   el.classList.add("disclaimer-hide");
   el.addEventListener("animationend", () => el.remove(), { once: true });
-}
-
-function kirimPesan() {
-  // Reset semua field
-  document.getElementById("f-nama").value   = "";
-  document.getElementById("f-email").value  = "";
-  document.getElementById("f-hp").value     = "";
-  document.getElementById("f-subjek").value = "";
-  document.getElementById("f-pesan").value  = "";
-
-  // Tampilkan notif
-  showToast("Pesan berhasil terkirim! ✅");
-}
-
-function showToast(msg) {
-  const toast = document.getElementById("toast");
-  toast.querySelector("span").textContent = msg;
-  toast.classList.add("show");
-  setTimeout(() => toast.classList.remove("show"), 3500);
 }

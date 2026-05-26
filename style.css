@@ -176,11 +176,6 @@ body {
     color: #111;
 }
 
-.header nav a.active {
-    background-color: #111;
-    color: #fff;
-}
-
 .profil-avatar {
     width: 36px;
     height: 36px;
@@ -393,14 +388,31 @@ body {
 .section-contact {
     padding: 4rem 6rem;
     border-bottom: 1px solid #ddd;
+    display: flex;
+    justify-content: center;
 }
 
 .contact-form-card {
-    max-width: 600px;
+    width: 100%;
+    max-width: 620px;
     border: 1px dashed #ccc;
-    border-radius: 12px;
-    padding: 1.75rem;
+    border-radius: 14px;
+    padding: 2rem;
     background: #fff;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.06);
+}
+
+.form-badge {
+    display: inline-block;
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    background: #1b1b1b;
+    color: #fff;
+    border-radius: 20px;
+    padding: 0.25rem 0.75rem;
+    margin-bottom: 0.6rem;
 }
 
 .form-card-top {
@@ -411,7 +423,7 @@ body {
 }
 
 .form-card-top h3 {
-    font-size: 1.2rem;
+    font-size: 1.3rem;
     font-weight: 700;
     color: #111;
     margin-bottom: 0.25rem;
@@ -420,6 +432,46 @@ body {
 .form-sub {
     font-size: 0.82rem;
     color: #888;
+}
+
+.form-divider {
+    border: none;
+    border-top: 1px dashed #ddd;
+    margin: 1.25rem 0;
+}
+
+.form-section-label {
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    color: #999;
+    text-align: center;
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+}
+
+.form-group select {
+    border: none;
+    border-bottom: 1px solid #ddd;
+    padding: 0.5rem 0.25rem;
+    font-size: 0.88rem;
+    font-family: "Roboto", sans-serif;
+    color: #222;
+    outline: none;
+    background: transparent;
+    transition: border-color 0.2s;
+    width: 100%;
+    cursor: pointer;
+    appearance: none;
+    -webkit-appearance: none;
+}
+
+.form-group select:focus {
+    border-bottom-color: #111;
+}
+
+.form-group select option[disabled] {
+    color: #bbb;
 }
 
 
@@ -525,40 +577,10 @@ body {
     .section-profil > img { width: 100%; height: 220px; }
     .section-gallery ul { grid-template-columns: repeat(2, 1fr); }
  
-    .contact a { width: 120px; height: 120px; }
+    .section-contact { padding: 2.5rem 1.25rem; }
+    .form-row { grid-template-columns: 1fr; }
 }
  
 @media (max-width: 480px) {
     .section-gallery ul { grid-template-columns: 1fr 1fr; }
-}
-/* TOAST NOTIFIKASI */
-#toast {
-    position: fixed;
-    bottom: 2rem;
-    left: 50%;
-    transform: translateX(-50%) translateY(80px);
-    background: #2d6a4f;
-    color: #fff;
-    padding: 0.85rem 1.5rem;
-    border-radius: 10px;
-    display: flex;
-    align-items: center;
-    gap: 0.6rem;
-    font-size: 0.9rem;
-    font-weight: 500;
-    box-shadow: 0 8px 24px rgba(0,0,0,0.18);
-    z-index: 99998;
-    opacity: 0;
-    transition: transform 0.35s cubic-bezier(0.22,1,0.36,1), opacity 0.3s;
-    white-space: nowrap;
-    pointer-events: none;
-}
-
-#toast.show {
-    transform: translateX(-50%) translateY(0);
-    opacity: 1;
-}
-
-#toast.toast-error {
-    background: #9b1c1c;
 }

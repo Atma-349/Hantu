@@ -6,11 +6,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>DEDEMIT ASALOLE</title>
   <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
-
+  <!--!important : semua media, masukkan ke folder media-->
 <body>
-
   <!-- DISCLAIMER BOX -->
   <div id="disclaimer">
     <div id="disclaimer-box">
@@ -26,21 +24,22 @@
       <p id="disclaimer-confirm">Dengan melanjutkan, kamu menyatakan siap dan tidak keberatan dengan konten di atas.</p>
       <div id="disclaimer-btns">
         <button id="btn-lanjut" onclick="tutupDisclaimer()">Saya Siap, Lanjutkan</button>
-        <button id="btn-keluar" onclick="window.history.back()">Tidak, Kembali</button>
+        <button id="btn-keluar" onclick="window.location.href='https://www.youtube.com/watch?v=dQw4w9WgXcQ'">Tidak,
+          Kembali</button>
       </div>
     </div>
   </div>
 
   <!-- NAVBAR -->
   <div class="header">
-    <img class="logo-img" src="" alt="logo" />
+    <img class="logo-img" src="Media/img/main/logo.png" alt="logo" /> <!-- TODO : ini tambahin ya fotonya-->
     <nav>
       <a href="#home" class="nav-link active">Beranda</a>
       <a href="#section-profil" class="nav-link">Profil</a>
       <a href="#gallery" class="nav-link">Galeri</a>
       <a href="#contact" class="nav-link">Kontak</a>
     </nav>
-    <img class="profil-avatar" src="" alt="profil" />
+    <img class="profil-avatar" src="Media/img/main/avatar.jpg" alt="profil" /> <!-- TODO : ini tambahin ya fotonya-->
   </div>
 
   <div class="content">
@@ -50,16 +49,18 @@
       <h1>Tugas Akhir Growcaps</h1>
       <p>Page Web ini dibuat untuk memenuhi tugas akhir dari kegiatan Growcaps. Kami tahu bahwa halaman kami masih
         sederhana, namun kami sudah membuatnya dengan sungguh-sungguh.</p>
+      <!-- TODO : ini klo mo di ubah bebas aja sih isinya-->
     </div>
 
     <!-- PROFIL -->
     <div class="section-profil" id="section-profil">
-      <img src="" alt="foto profil" />
+      <img src="Media/img/main/dedemit.png" alt="foto profil" style="width:100%; max-width:500px; height:auto;" /> <!-- TODO : ini tambahin ya fotonya-->
       <div class="deskripsi">
-        <h1>Profil</h1>
-        <h3>Dedemit Asalole</h3>
-        <p>Dedemit Asalole adalah halaman berisikan gambar-gambar hantu yang ada di Indonesia.</p>
-      </div>
+        <h1>DEDEMIT ASALOLE</h1>
+        <h3>Jasa Mengirim Bala</h3>
+        <p>Dedemit Asalole merupakan website bertema horror dan supranatural yang menyediakan layanan pengiriman entitas mistis untuk kebutuhan berupa teror.Kami menyediakan pilihan
+          hantu yang ingin anda kirim, silahkan scroll ke bawah.</p>
+      </div> <!-- TODO : ini klo mo di ubah bebas aja sih isinya-->
     </div>
 
     <!-- GALLERY -->
@@ -68,55 +69,166 @@
       <ul>
         <li>
           <div class="card" onclick="showFullscreen(this)">
-            <div class="card-img"><img src="Media/img/profil.png" alt="hantu 1" /></div>
+            <!-- TODO : klo mo nambah hantu tinggal salin aja, ntar tinggal ganti isinya sama gambarnya, structurnya jangan di ganti-->
+            <div class="card-img"><img src="Media/img/galeri/kuntilanak.jpg" alt="hantu 1" /></div>
             <div class="card-body">
-              <p>Nama Hantu 1</p>
-              <span>Deskripsi singkat tentang hantu ini bisa ditulis di sini.</span>
+              <p>Kuntilanak</p>
+              <span>Kuntilanak adalah sosok hantu perempuan dalam cerita rakyat Nusantara yang dipercaya berasal dari
+                arwah wanita yang meninggal saat hamil atau melahirkan.
+                Ia digambarkan berambut panjang, berpakaian putih, dan sering muncul pada malam hari dengan suasana
+                menyeramkan.
+                Nama “kuntilanak” diyakini berasal dari bahasa Melayu yang berkaitan dengan perempuan dan anak, sehingga
+                erat hubungannya dengan
+                kisah kematian ibu dan bayi dalam tradisi masyarakat.</span>
             </div>
           </div>
         </li>
         <li>
           <div class="card" onclick="showFullscreen(this)">
-            <div class="card-img"><img src="" alt="hantu 2" /></div>
+            <div class="card-img"><img src="Media/img/galeri/pocong.jpg" alt="hantu 2" /></div>
             <div class="card-body">
-              <p>Nama Hantu 2</p>
-              <span>Deskripsi singkat tentang hantu ini bisa ditulis di sini.</span>
+              <p>Pocong</p>
+              <span>Pocong adalah sosok hantu dalam cerita rakyat Indonesia yang digambarkan sebagai
+                mayat terbungkus kain kafan putih dengan ikatan di kepala dan kaki. Asal-usul pocong berasal dari
+                tradisi pemakaman Islam di Indonesia,
+                di mana jenazah dibungkus kain kafan sebelum dikuburkan. Dalam kepercayaan masyarakat, pocong muncul
+                karena arwah orang meninggal belum tenang
+                atau tali kafannya belum dilepas. Pocong sering digambarkan bergerak dengan melompat dan muncul pada
+                malam hari di tempat sunyi atau angker.</span>
             </div>
           </div>
         </li>
         <li>
           <div class="card" onclick="showFullscreen(this)">
-            <div class="card-img"><img src="" alt="hantu 3" /></div>
+            <div class="card-img"><img src="Media/img/galeri/genderuwo.jpg" alt="hantu 3" /></div>
             <div class="card-body">
-              <p>Nama Hantu 3</p>
-              <span>Deskripsi singkat tentang hantu ini bisa ditulis di sini.</span>
+              <p>Genderuwo</p>
+              <span>Genderuwo adalah makhluk gaib dalam cerita rakyat Jawa yang digambarkan berbadan besar, berbulu
+                lebat, dan menyeramkan.
+                Genderuwo dipercaya tinggal di tempat sunyi seperti hutan, pohon besar, atau bangunan kosong. Dalam
+                kepercayaan masyarakat,
+                makhluk ini sering dikaitkan dengan gangguan mistis, suara aneh pada malam hari,
+                dan kemampuan menyerupai manusia untuk menakuti orang.</span>
             </div>
           </div>
         </li>
         <li>
           <div class="card" onclick="showFullscreen(this)">
-            <div class="card-img"><img src="" alt="hantu 4" /></div>
+            <div class="card-img"><img src="Media/img/galeri/SusterNgesot.jpg" alt="hantu 4" /></div>
             <div class="card-body">
-              <p>Nama Hantu 4</p>
-              <span>Deskripsi singkat tentang hantu ini bisa ditulis di sini.</span>
+              <p>Suster Ngesot</p>
+              <span>Suster Ngesot adalah legenda horor Indonesia tentang arwah perawat berpakaian putih yang bergerak
+                menyeret tubuhnya
+                karena kakinya rusak atau buntung. Cerita ini berasal dari mitos rumah sakit tua dan kisah
+                tragis seorang suster yang meninggal tidak wajar lalu bergentayangan.</span>
             </div>
           </div>
         </li>
         <li>
           <div class="card" onclick="showFullscreen(this)">
-            <div class="card-img"><img src="" alt="hantu 5" /></div>
+            <div class="card-img"><img src="Media/img/galeri/kuyang.jpeg" alt="hantu 5" /></div>
             <div class="card-body">
-              <p>Nama Hantu 5</p>
-              <span>Deskripsi singkat tentang hantu ini bisa ditulis di sini.</span>
+              <p>Kuyang</p>
+              <span>Kuyang adalah makhluk dalam cerita rakyat Kalimantan yang dipercaya berasal dari manusia yang
+                mempelajari ilmu hitam.
+                Pada malam hari, kuyang digambarkan dapat melepaskan tubuhnya dari bagian leher ke atas, sehingga hanya
+                kepala dengan organ
+                dalam yang terlihat melayang mencari mangsa, biasanya darah bayi atau ibu yang baru melahirkan. Cerita
+                tentang kuyang berasal
+                dari kepercayaan dan tradisi lisan masyarakat Kalimantan sebagai penjelasan mistis terhadap hal-hal yang
+                sulit dijelaskan pada masa lalu,
+                dan hingga kini masih menjadi bagian dari folklore daerah tersebut.</span>
             </div>
           </div>
         </li>
         <li>
           <div class="card" onclick="showFullscreen(this)">
-            <div class="card-img"><img src="" alt="hantu 6" /></div>
+            <div class="card-img"><img src="Media/img/galeri/Tuyul.jpg" alt="hantu 6" /></div>
             <div class="card-body">
-              <p>Nama Hantu 6</p>
-              <span>Deskripsi singkat tentang hantu ini bisa ditulis di sini.</span>
+              <p>Tuyul</p>
+              <span>Tuyul adalah makhluk gaib dalam cerita rakyat Indonesia yang biasanya digambarkan seperti anak kecil
+                berkepala botak.
+                Tuyul dipercaya dapat dipelihara oleh seseorang melalui ilmu gaib untuk mencuri uang atau barang
+                berharga demi pemiliknya.
+                Kepercayaan ini muncul dari tradisi mistis masyarakat dan sering dikaitkan dengan praktik
+                pesugihan.</span>
+            </div>
+          </div>
+        </li>
+        <li>
+          <div class="card" onclick="showFullscreen(this)">
+            <div class="card-img"><img src="Media/img/galeri/Suanggi.jpg" alt="hantu 7" /></div>
+            <div class="card-body">
+              <p>Suanggi</p>
+              <span>Suanggi adalah makhluk atau sosok dalam cerita rakyat Maluku dan Papua yang dipercaya memiliki ilmu
+                hitam.
+                Suanggi sering digambarkan sebagai manusia yang dapat berubah menjadi makhluk gaib untuk mencelakai
+                orang lain atau menyebabkan penyakit,
+                dan menjadi bagian dari kepercayaan tradisional masyarakat setempat.</span>
+            </div>
+          </div>
+        </li>
+        <li>
+          <div class="card" onclick="showFullscreen(this)">
+            <div class="card-img"><img src="Media/img/galeri/leak.jpg" alt="hantu 8" /></div>
+            <div class="card-body">
+              <p>Leak</p>
+              <span>Leak adalah sosok dalam kepercayaan Bali yang merupakan penyihir atau orang yang mempelajari ilmu
+                hitam. Pada malam hari, Leak dipercaya dapat
+                melepaskan kepalanya beserta organ dalamnya untuk terbang mencari mangsa, terutama bayi atau orang yang
+                lemah.
+                Dalam tradisi Bali, Leak sering dikaitkan dengan praktik ilmu pengiwa (ilmu hitam) dan pertarungan
+                antara kebaikan
+                dan kejahatan dalam cerita mistis.</span>
+            </div>
+          </div>
+        </li>
+        </li>
+        <li>
+          <div class="card" onclick="showFullscreen(this)">
+            <div class="card-img"><img src="Media/img/galeri/banaspati.jpg" alt="hantu 9" /></div>
+            <div class="card-body">
+              <p>Banaspati</p>
+              <span>Banaspati adalah makhluk mistis yang sering digambarkan sebagai bola api terbang atau sosok manusia berapi. Dalam beberapa cerita Jawa, 
+                Banaspati dipercaya sebagai roh jahat yang suka mengganggu manusia pada malam hari.</span>
+            </div>
+          </div>
+        </li>
+        <li>
+          <div class="card" onclick="showFullscreen(this)">
+            <div class="card-img"><img src="Media/img/galeri/sundel bolong.jpg" alt="hantu 10" /></div>
+            <div class="card-body">
+              <p>Sundel Bolong</p>
+              <span>Sundel Bolong adalah salah satu hantu perempuan paling terkenal di Indonesia.Sundel Bolong sering dikaitkan dengan perempuan yang meninggal saat hamil atau mengalami tragedi semasa hidupnya.
+                Sundel Bolong muncul pada malam hari di tempat sepi seperti jalan sunyi, pohon besar, atau daerah angker.Sundel Bolong terlihat normal dan cantik dari depan, 
+                tetapi ketika berbalik terlihat lubang menganga lebar di punggungnya.
+              </span>
+            </div>
+          </div>
+        </li>
+        <li>
+          <div class="card" onclick="showFullscreen(this)">
+            <div class="card-img"><img src="Media/img/galeri/orang bunian.jpg" alt="hantu 11" /></div>
+            <div class="card-body">
+              <p>Orang Bunian</p>
+              <span>Orang Bunian adalah makhluk gaib yang dikenal dalam cerita rakyat Melayu, terutama di wilayah Sumatra, Minangkabau, Kalimantan, dan Malaysia. 
+                Mereka dipercaya hidup di dunia paralel yang berdampingan dengan dunia manusia, biasanya di hutan lebat, gunung, atau tempat yang jarang dijamah orang.
+                Orang Bunian tidak dapat dilihat oleh manusia biasa kecuali dalam keadaan tertentu. Ada yang percaya orang tersesat di hutan sebenarnya “disembunyikan” oleh Orang Bunian.
+              </span>
+            </div>
+          </div>
+        <li>
+          <div class="card" onclick="showFullscreen(this)">
+            <div class="card-img"><img src="Media/img/galeri/wewegombel.jpg" alt="hantu 12" /></div>
+            <div class="card-body">
+              <p>Wewe Gombel</p>
+              <span>Wewe Gombel adalah makhluk gaib dalam cerita rakyat Jawa yang digambarkan sebagai wanita berwujud
+                menyeramkan dengan payudara besar dan
+                rambut panjang. Ia dipercaya suka menculik anak-anak yang ditelantarkan atau tidak diperhatikan orang
+                tuanya,
+                lalu “merawat” mereka di tempat persembunyiannya sampai orang tua menyadari kesalahannya. Dalam beberapa
+                versi,
+                anak yang diculik tidak disakiti, tetapi dijaga sampai diambil kembali oleh keluarganya.</span>
             </div>
           </div>
         </li>
@@ -128,14 +240,19 @@
       <div class="contact-form-card">
         <div class="form-card-top">
           <div>
-            <h3>Kirim Pesan</h3>
-            <p class="form-sub">Kami akan membalas pesan Anda secepat mungkin.</p>
+            <p class="form-badge">Layanan Pengiriman Bala</p>
+            <h3>Form Pemesanan Bala</h3>
+            <p class="form-sub">Isi data dengan benar. Bala akan dikirim dalam 3×7 malam.</p>
           </div>
         </div>
 
+        <div class="form-divider"></div>
+
+        <p class="form-section-label">— Data Pemesan —</p>
+
         <div class="form-group">
-          <label>Nama</label>
-          <input id="f-nama" type="text" placeholder="Nama Lengkap" />
+          <label>Nama Pemesan</label>
+          <input id="f-nama" type="text" placeholder="Nama lengkap kamu" />
         </div>
 
         <div class="form-row">
@@ -149,41 +266,71 @@
           </div>
         </div>
 
+        <div class="form-divider"></div>
+
+        <p class="form-section-label">— Data Tujuan Bala —</p>
+
         <div class="form-group">
-          <label>Subjek</label>
-          <input id="f-subjek" type="text" placeholder="Judul Pesan" />
+          <label>Nama Korban Tujuan</label>
+          <input id="f-korban" type="text" placeholder="Nama orang yang dituju" />
         </div>
 
         <div class="form-group">
-          <label>Pesan</label>
-          <textarea id="f-pesan" placeholder="Tulis pesan Anda di sini..."></textarea>
+          <label>Alamat / Lokasi Tujuan</label>
+          <input id="f-alamat" type="text" placeholder="Alamat lengkap atau daerah tinggalnya" />
         </div>
 
-        <!-- onclick sudah terhubung ke kirimPesan() -->
-        <button class="btn-kirim" onclick="kirimPesan()">Kirim Pesan </button>
+        <div class="form-row">
+          <div class="form-group">
+            <label>Pilih Hantu Kiriman</label>
+            <select id="f-hantu">
+              <option value="" disabled selected>-- Pilih Hantu --</option>
+              <option value="kuntilanak">Kuntilanak</option>
+              <option value="pocong">Pocong</option>
+              <option value="genderuwo">Genderuwo</option>
+              <option value="suster">Suster Ngesot</option>
+              <option value="kuyang">Kuyang</option>
+              <option value="tuyul">Tuyul</option>
+              <option value="suanggi">Suanggi</option>
+              <option value="leak">Leak</option>
+              <option value="banaspati">Banaspati</option>
+              <option value="sundel bolong">Sundel Bolong</option>
+              <option value="orang bunian">Orang Bunian</option>
+              <option value="wewegombel">Wewe Gombel</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>Tingkat Kegentaran</label>
+            <select id="f-level">
+              <option value="" disabled selected>-- Pilih Level --</option>
+              <option value="ringan">Ringan (Cuma Mimpi Buruk)</option>
+              <option value="sedang">Sedang (Nampak di Cermin)</option>
+              <option value="serius">Serius (Muncul Tiap Malam)</option>
+              <option value="brutal">Brutal (Pindah Rumah Sendiri)</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label>Keterangan Tambahan</label>
+          <textarea id="f-pesan"
+            placeholder="Ceritakan kenapa orang ini layak mendapat kunjungan spesial..."></textarea>
+        </div>
+
+        <button class="btn-kirim" onclick="kirimPesan()">Kirim Pesanan Bala</button>
       </div>
     </div>
 
-    <!-- FOOTER -->
-    <div class="footer">
-      <p>© 2026 orang ganteng — All Rights Reserved</p>
+    <!-- FULLSCREEN OVERLAY -->
+    <div id="fs-overlay" onclick="closeFullscreen()">
+      <img id="fs-img" src="" alt="" />
+      <button id="fs-close" onclick="closeFullscreen()">X</button>
     </div>
 
-  </div>
+    <!-- AUDIO -->
+    <audio id="scare-audio" src="Media/audio/mangaletp-funny-laughing-406018.mp3" preload="auto"></audio>
 
-  <!-- FULLSCREEN OVERLAY -->
-  <div id="fs-overlay" onclick="closeFullscreen()">
-    <img id="fs-img" src="" alt="" />
-    <button id="fs-close" onclick="closeFullscreen()">X</button>
-  </div>
-
-  <!-- TOAST NOTIFIKASI -->
-  <div id="toast"></div>
-
-  <!-- AUDIO -->
-  <audio id="scare-audio" src="Media/audio/mangaletp-funny-laughing-406018.mp3" preload="auto"></audio>
-
-  <script src="script.js"></script>
+    <script src="script.js"></script>
 </body>
 
 </html>
