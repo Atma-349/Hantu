@@ -12,7 +12,7 @@ body {
     color: #e0e0e0;
 }
 
-/* DISCLAIMER  */
+/* DISCLAIMER */
 #disclaimer {
     position: fixed;
     inset: 0;
@@ -89,9 +89,7 @@ body {
     line-height: 1.5;
 }
 
-#disclaimer-list strong {
-    color: #f0f0f0;
-}
+#disclaimer-list strong { color: #f0f0f0; }
 
 #disclaimer-confirm {
     font-size: 12.48px;
@@ -171,7 +169,8 @@ body {
     transition: background 0.2s, color 0.2s;
 }
 
-.header nav a:hover {
+.header nav a:hover, 
+.header nav a.active {
     background-color: #222;
     color: #fff;
 }
@@ -188,12 +187,13 @@ body {
 /* CONTENT */
 .content { padding-top: 60px; }
 
-/* HOME */
-.section-home {
+/* SECTIONS COMMON */
+.section-home, .section-profil, .section-gallery, .section-contact {
     padding: 64px 96px;
     border-bottom: 1px solid #2a2a2a;
 }
 
+/* HOME */
 .section-home h1 {
     font-size: 32px;
     font-weight: 700;
@@ -212,12 +212,11 @@ body {
     display: flex;
     align-items: center;
     gap: 48px;
-    padding: 64px 96px;
-    border-bottom: 1px solid #2a2a2a;
 }
 
 .section-profil > img {
-    width: 220px;
+    width: 100%;
+    max-width: 220px;
     height: 260px;
     object-fit: cover;
     border-radius: 10px;
@@ -247,11 +246,6 @@ body {
 }
 
 /* GALLERY */
-.section-gallery {
-    padding: 64px 96px;
-    border-bottom: 1px solid #2a2a2a;
-}
-
 .section-gallery h1 {
     font-size: 25.6px;
     font-weight: 700;
@@ -292,7 +286,6 @@ body {
     height: 100%;
     object-fit: cover;
     display: block;
-    transform: scale(1);
     transition: transform 0.4s ease;
 }
 
@@ -384,12 +377,7 @@ body {
 #fs-close:hover { background: rgba(255,255,255,0.3); }
 
 /* CONTACT */
-.section-contact {
-    padding: 64px 96px;
-    border-bottom: 1px solid #2a2a2a;
-    display: flex;
-    justify-content: center;
-}
+.section-contact { display: flex; justify-content: center; }
 
 .contact-form-card {
     width: 100%;
@@ -428,16 +416,8 @@ body {
     margin-bottom: 4px;
 }
 
-.form-sub {
-    font-size: 13.12px;
-    color: #777;
-}
-
-.form-divider {
-    border: none;
-    border-top: 1px dashed #333;
-    margin: 20px 0;
-}
+.form-sub { font-size: 13.12px; color: #777; }
+.form-divider { border: none; border-top: 1px dashed #333; margin: 20px 0; }
 
 .form-section-label {
     font-size: 12.48px;
@@ -478,20 +458,9 @@ body {
     width: 100%;
 }
 
-.form-group input:focus,
-.form-group textarea:focus {
-    border-bottom-color: #aaa;
-}
-
-.form-group input::placeholder,
-.form-group textarea::placeholder {
-    color: #555;
-}
-
-.form-group textarea {
-    resize: none;
-    height: 110px;
-}
+.form-group input:focus, .form-group textarea:focus { border-bottom-color: #aaa; }
+.form-group input::placeholder, .form-group textarea::placeholder { color: #555; }
+.form-group textarea { resize: none; height: 110px; }
 
 .form-group select {
     border: none;
@@ -509,24 +478,10 @@ body {
     -webkit-appearance: none;
 }
 
-.form-group select:focus {
-    border-bottom-color: #aaa;
-}
-
-.form-group select option[disabled] {
-    color: #555;
-}
-
-.form-group select option {
-    background: #222;
-    color: #e0e0e0;
-}
-
-.form-row {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 16px;
-}
+.form-group select:focus { border-bottom-color: #aaa; }
+.form-group select option[disabled] { color: #555; }
+.form-group select option { background: #222; color: #e0e0e0; }
+.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
 
 .btn-kirim {
     margin-top: 8px;
@@ -545,41 +500,20 @@ body {
     transition: background 0.2s, transform 0.15s;
 }
 
-.btn-kirim:hover {
-    background: #1b4332;
-    transform: translateY(-1px);
-}
-
-/* FOOTER */
-.footer {
-    padding: 20px 32px;
-    text-align: center;
-    font-size: 13.12px;
-    color: #555;
-    background: #111;
-    border-top: 1px solid #2a2a2a;
-}
+.btn-kirim:hover { background: #1b4332; transform: translateY(-1px); }
 
 /* SCROLL MARGIN */
-#home, #section-profil, #gallery, #contact {
-    scroll-margin-top: 60px;
-}
+#home, #section-profil, #gallery, #contact { scroll-margin-top: 60px; }
 
-/* RESPONSIVE TUK MOBILE */
+/* RESPONSIVE FOR MOBILE */
 @media (max-width: 768px) {
     .header { padding: 0 16px; }
     .logo-img { display: none; }
     .header nav a { font-size: 12.8px; padding: 5.6px 9.6px; }
-
-    .section-home,
-    .section-profil,
-    .section-gallery,
-    .section-contact { padding: 40px 20px; }
-
+    
+    .section-home, .section-profil, .section-gallery, .section-contact { padding: 40px 20px; }
     .section-profil { flex-direction: column; align-items: flex-start; }
-    .section-profil > img { width: 100%; height: 220px; }
+    .section-profil > img { max-width: 100%; height: 220px; }
     .section-gallery ul { grid-template-columns: repeat(2, 1fr); }
-
-    .section-contact { padding: 40px 20px; }
     .form-row { grid-template-columns: 1fr; }
 }
