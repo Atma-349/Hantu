@@ -7,8 +7,14 @@
   <link rel="stylesheet" href="style.css">
   <link rel="icon" type="image/png" href="Media/img/main/logo.png">
 </head>
-<body>
 
+<body>
+  <!-- ============================================================
+       🎈 POIN PENTING: DISCLAIMER / POP-UP AWAL
+       Overlay ini muncul pertama kali saat web dibuka.
+       Menggunakan position: fixed agar menutupi seluruh layar.
+       Akan dihapus dari layar saat user klik "Lanjutkan".
+  ================================================================ -->
   <div id="disclaimer">
     <div id="disclaimer-box">
       <div id="disclaimer-icon">⚠️</div>
@@ -22,152 +28,220 @@
       </ul>
       <p id="disclaimer-confirm">Dengan melanjutkan, kamu menyatakan siap dan tidak keberatan dengan konten di atas.</p>
       <div id="disclaimer-btns">
+        <!-- 🎈 POIN PENTING: onclick="tutupDisclaimer()" memanggil fungsi JavaScript saat tombol diklik -->
         <button id="btn-lanjut" onclick="tutupDisclaimer()">Saya Siap, Lanjutkan</button>
-        <button id="btn-keluar" onclick="window.location.href='https://www.youtube.com/watch?v=dQw4w9WgXcQ'">Tidak, Kembali</button>
+        <!-- Tombol "Tidak" akan redirect ke YouTube -->
+        <button id="btn-keluar" onclick="window.location.href='https://www.youtube.com/watch?v=dQw4w9WgXcQ'">Tidak,
+          Kembali</button>
       </div>
     </div>
   </div>
 
+  <!-- ============================================================
+       🎈 POIN PENTING: NAVBAR (Navigation Bar)
+       Menggunakan position: fixed agar navbar selalu terlihat
+       di bagian atas meskipun halaman di scroll ke bawah.
+       Berisi logo, link navigasi, dan avatar profil.
+  ================================================================ -->
   <div class="header">
     <img class="logo-img" src="Media/img/main/logo.png" alt="logo" />
+
+    <!-- nav berisi anchor links (#) yang akan scroll ke section tujuan -->
     <nav>
+      <!-- href="#home" = scroll ke elemen dengan id="home" -->
       <a href="#home" class="nav-link">Beranda</a>
       <a href="#section-profil" class="nav-link">Profil</a>
       <a href="#gallery" class="nav-link">Galeri</a>
       <a href="#contact" class="nav-link">Kontak</a>
     </nav>
-    <img class="profil-avatar" src="Media/img/main/favicon.jpg" alt="profil" />
+
+    <!-- Foto profil kecil di pojok kanan navbar -->
+    <img class="profil-avatar" src="Media/img/main/kontak.jpg" alt="profil" />
   </div>
 
+  <!-- Wrapper utama semua konten -->
   <div class="content">
+
+    <!-- ============================================================
+         🎈 POIN PENTING: SECTION HOME
+         Setiap section diberi id agar bisa dijadikan target
+         navigasi (anchor link) dari navbar di atas.
+    ================================================================ -->
     <div class="section-home" id="home">
       <h1>Tugas Akhir Growcaps</h1>
-      <p>Page Web ini dibuat untuk memenuhi tugas akhir dari kegiatan Growcaps. Kami tahu bahwa halaman kami masih sederhana, namun kami sudah membuatnya dengan sungguh-sungguh.</p>
+      <p>Page Web ini dibuat untuk memenuhi tugas akhir dari kegiatan Growcaps. Kami tahu bahwa halaman kami masih
+        sederhana, namun kami sudah membuatnya dengan sungguh-sungguh.</p>
     </div>
 
+    <!-- ============================================================
+         SECTION PROFIL
+         Menampilkan foto + deskripsi website secara berdampingan
+    ================================================================ -->
     <div class="section-profil" id="section-profil">
       <img src="Media/img/main/dedemit.png" alt="foto profil" />
       <div class="deskripsi">
         <h1>DEDEMIT ASALOLE</h1>
         <h3>Jasa Mengirim Bala</h3>
-        <p>Dedemit Asalole merupakan website bertema horror dan supranatural yang menyediakan layanan pengiriman entitas mistis untuk kebutuhan berupa teror. Kami menyediakan pilihan hantu yang ingin anda kirim, silahkan scroll ke bawah.</p>
+        <p>Dedemit Asalole merupakan website bertema horror dan supranatural yang menyediakan layanan pengiriman entitas
+          mistis untuk kebutuhan berupa teror. Kami menyediakan pilihan hantu yang ingin anda kirim, silahkan scroll ke
+          bawah.</p>
       </div>
     </div>
 
+    <!-- ============================================================
+         🎈 POIN PENTING: SECTION GALERI
+         Menggunakan CSS Grid (grid-template-columns: repeat(3, 1fr))
+         agar kartu tersusun 3 kolom secara otomatis.
+         Setiap kartu bisa diklik untuk membuka gambar fullscreen
+         sambil memutar efek suara.
+    ================================================================ -->
     <div class="section-gallery" id="gallery">
       <h1>Galeri</h1>
       <ul>
+
+        <!-- 🎈 POIN PENTING: onclick="showFullscreen(this)" — "this" merujuk ke elemen .card
+             yang diklik, lalu dikirim ke fungsi JavaScript untuk diproses -->
         <li>
           <div class="card" onclick="showFullscreen(this)">
             <div class="card-img"><img src="Media/img/galeri/kuntilanak.jpg" alt="Kuntilanak" /></div>
             <div class="card-body">
               <p>Kuntilanak</p>
-              <span>Kuntilanak adalah sosok hantu perempuan dalam cerita rakyat Nusantara yang dipercaya berasal dari arwah wanita yang meninggal saat hamil atau melahirkan.</span>
+              <span>Kuntilanak adalah sosok hantu perempuan dalam cerita rakyat Nusantara yang dipercaya berasal dari
+                arwah wanita yang meninggal saat hamil atau melahirkan.</span>
             </div>
           </div>
         </li>
+
         <li>
           <div class="card" onclick="showFullscreen(this)">
             <div class="card-img"><img src="Media/img/galeri/pocong.jpg" alt="Pocong" /></div>
             <div class="card-body">
               <p>Pocong</p>
-              <span>Pocong adalah sosok hantu dalam cerita rakyat Indonesia yang digambarkan sebagai mayat terbungkus kain kafan putih dengan ikatan di kepala dan kaki.</span>
+              <span>Pocong adalah sosok hantu dalam cerita rakyat Indonesia yang digambarkan sebagai mayat terbungkus
+                kain kafan putih dengan ikatan di kepala dan kaki.</span>
             </div>
           </div>
         </li>
+
         <li>
           <div class="card" onclick="showFullscreen(this)">
             <div class="card-img"><img src="Media/img/galeri/genderuwo.jpg" alt="Genderuwo" /></div>
             <div class="card-body">
               <p>Genderuwo</p>
-              <span>Genderuwo adalah makhluk gaib dalam cerita rakyat Jawa yang digambarkan berbadan besar, berbulu lebat, dan menyeramkan.</span>
+              <span>Genderuwo adalah makhluk gaib dalam cerita rakyat Jawa yang digambarkan berbadan besar, berbulu
+                lebat, dan menyeramkan.</span>
             </div>
           </div>
         </li>
+
         <li>
           <div class="card" onclick="showFullscreen(this)">
             <div class="card-img"><img src="Media/img/galeri/SusterNgesot.jpg" alt="Suster Ngesot" /></div>
             <div class="card-body">
               <p>Suster Ngesot</p>
-              <span>Suster Ngesot adalah legenda horor Indonesia tentang arwah perawat berpakaian putih yang bergerak menyeret tubuhnya karena kakinya rusak atau buntung.</span>
+              <span>Suster Ngesot adalah legenda horor Indonesia tentang arwah perawat berpakaian putih yang bergerak
+                menyeret tubuhnya karena kakinya rusak atau buntung.</span>
             </div>
           </div>
         </li>
+
         <li>
           <div class="card" onclick="showFullscreen(this)">
             <div class="card-img"><img src="Media/img/galeri/kuyang.jpeg" alt="Kuyang" /></div>
             <div class="card-body">
               <p>Kuyang</p>
-              <span>Kuyang adalah makhluk dalam cerita rakyat Kalimantan yang dipercaya berasal dari manusia yang mempelajari ilmu hitam dengan organ dalam yang melayang.</span>
+              <span>Kuyang adalah makhluk dalam cerita rakyat Kalimantan yang dipercaya berasal dari manusia yang
+                mempelajari ilmu hitam dengan organ dalam yang melayang.</span>
             </div>
           </div>
         </li>
+
         <li>
           <div class="card" onclick="showFullscreen(this)">
             <div class="card-img"><img src="Media/img/galeri/Tuyul.jpg" alt="Tuyul" /></div>
             <div class="card-body">
               <p>Tuyul</p>
-              <span>Tuyul adalah makhluk gaib dalam cerita rakyat Indonesia yang biasanya digambarkan seperti anak kecil berkepala botak untuk mencuri uang.</span>
+              <span>Tuyul adalah makhluk gaib dalam cerita rakyat Indonesia yang biasanya digambarkan seperti anak kecil
+                berkepala botak untuk mencuri uang.</span>
             </div>
           </div>
         </li>
+
         <li>
           <div class="card" onclick="showFullscreen(this)">
             <div class="card-img"><img src="Media/img/galeri/Suanggi.jpg" alt="Suanggi" /></div>
             <div class="card-body">
               <p>Suanggi</p>
-              <span>Suanggi adalah makhluk atau sosok dalam cerita rakyat Maluku dan Papua yang dipercaya memiliki ilmu hitam untuk mencelakai orang lain.</span>
+              <span>Suanggi adalah makhluk atau sosok dalam cerita rakyat Maluku dan Papua yang dipercaya memiliki ilmu
+                hitam untuk mencelakai orang lain.</span>
             </div>
           </div>
         </li>
+
         <li>
           <div class="card" onclick="showFullscreen(this)">
             <div class="card-img"><img src="Media/img/galeri/leak.jpg" alt="Leak" /></div>
             <div class="card-body">
               <p>Leak</p>
-              <span>Leak adalah sosok dalam kepercayaan Bali yang merupakan penyihir ilmu hitam yang melepaskan kepalanya beserta organ dalamnya pada malam hari.</span>
+              <span>Leak adalah sosok dalam kepercayaan Bali yang merupakan penyihir ilmu hitam yang melepaskan
+                kepalanya beserta organ dalamnya pada malam hari.</span>
             </div>
           </div>
         </li>
+
         <li>
           <div class="card" onclick="showFullscreen(this)">
             <div class="card-img"><img src="Media/img/galeri/banaspati.jpg" alt="Banaspati" /></div>
             <div class="card-body">
               <p>Banaspati</p>
-              <span>Banaspati adalah makhluk mistis yang sering digambarkan sebagai bola api terbang atau sosok manusia berapi yang suka mengganggu pada malam hari.</span>
+              <span>Banaspati adalah makhluk mistis yang sering digambarkan sebagai bola api terbang atau sosok manusia
+                berapi yang suka mengganggu pada malam hari.</span>
             </div>
           </div>
         </li>
+
         <li>
           <div class="card" onclick="showFullscreen(this)">
             <div class="card-img"><img src="Media/img/galeri/sundel bolong.jpg" alt="Sundel Bolong" /></div>
             <div class="card-body">
               <p>Sundel Bolong</p>
-              <span>Sundel Bolong terlihat normal dan cantik dari depan, tetapi ketika berbalik terlihat lubang menganga lebar di bagian punggungnya.</span>
+              <span>Sundel Bolong terlihat normal dan cantik dari depan, tetapi ketika berbalik terlihat lubang menganga
+                lebar di bagian punggungnya.</span>
             </div>
           </div>
         </li>
+
         <li>
           <div class="card" onclick="showFullscreen(this)">
             <div class="card-img"><img src="Media/img/galeri/orang bunian.jpg" alt="Orang Bunian" /></div>
             <div class="card-body">
               <p>Orang Bunian</p>
-              <span>Orang Bunian adalah makhluk gaib yang dipercaya hidup di dunia paralel berdampingan dengan manusia di hutan lebat atau gunung.</span>
+              <span>Orang Bunian adalah makhluk gaib yang dipercaya hidup di dunia paralel berdampingan dengan manusia
+                di hutan lebat atau gunung.</span>
             </div>
           </div>
         </li>
+
         <li>
           <div class="card" onclick="showFullscreen(this)">
             <div class="card-img"><img src="Media/img/galeri/wewegombel.jpg" alt="Wewe Gombel" /></div>
             <div class="card-body">
               <p>Wewe Gombel</p>
-              <span>Wewe Gombel adalah makhluk gaib dalam cerita rakyat Jawa yang suka menculik anak-anak yang ditelantarkan atau kurang perhatian dari orang tua.</span>
+              <span>Wewe Gombel adalah makhluk gaib dalam cerita rakyat Jawa yang suka menculik anak-anak yang
+                ditelantarkan atau kurang perhatian dari orang tua.</span>
             </div>
           </div>
         </li>
+
       </ul>
     </div>
 
+    <!-- ============================================================
+         🎈 POIN PENTING: SECTION KONTAK / FORM PEMESANAN
+         Berisi form input data pemesan dan data korban tujuan.
+         Menggunakan berbagai jenis input: text, email, tel, select, textarea.
+         Data form diproses oleh fungsi kirimPesan() di JavaScript.
+    ================================================================ -->
     <div class="section-contact" id="contact">
       <div class="contact-form-card">
         <div class="form-card-top">
@@ -181,36 +255,29 @@
         <div class="form-divider"></div>
         <p class="form-section-label">— Data Pemesan —</p>
 
+        <!-- id="f-nama" digunakan JavaScript untuk mengambil/mereset nilai input ini -->
         <div class="form-group">
           <label>Nama Pemesan</label>
           <input id="f-nama" type="text" placeholder="Nama lengkap kamu" />
-        </div>
-
-        <div class="form-row">
-          <div class="form-group">
-            <label>Email</label>
-            <input id="f-email" type="email" placeholder="Alamat Email" />
-          </div>
-          <div class="form-group">
-            <label>Nomor HP</label>
-            <input id="f-hp" type="tel" placeholder="08..." />
-          </div>
         </div>
 
         <div class="form-divider"></div>
         <p class="form-section-label">— Data Tujuan Bala —</p>
 
         <div class="form-group">
-          <label>Nama Korban Tujuan</label>
+          <label>Nama Korban</label>
           <input id="f-korban" type="text" placeholder="Nama orang yang dituju" />
         </div>
 
         <div class="form-group">
-          <label>Alamat / Lokasi Tujuan</label>
-          <input id="f-alamat" type="text" placeholder="Alamat lengkap atau daerah tinggalnya" />
+          <label>Tujuan Pengiriman Bala</label>
+          <!-- textarea singkat untuk menjelaskan tujuan/alasan -->
+          <input id="f-tujuan" type="text" placeholder="Apa yang sudah dia perbuat?" />
         </div>
 
         <div class="form-row">
+          <!-- 🎈 POIN PENTING: <select> membuat dropdown pilihan
+               option value="" disabled selected = placeholder yang tidak bisa dipilih ulang -->
           <div class="form-group">
             <label>Pilih Hantu Kiriman</label>
             <select id="f-hantu">
@@ -241,23 +308,53 @@
           </div>
         </div>
 
+        <!-- textarea = input teks panjang banyak baris -->
         <div class="form-group">
           <label>Keterangan Tambahan</label>
-          <textarea id="f-pesan" placeholder="Ceritakan kenapa orang ini layak mendapat kunjungan spesial..."></textarea>
+          <textarea id="f-pesan"
+            placeholder="Ceritakan kenapa orang ini layak mendapat kunjungan spesial..."></textarea>
         </div>
 
+        <!-- Tombol submit form, memanggil fungsi kirimPesan() -->
         <button class="btn-kirim" onclick="kirimPesan()">Kirim Pesanan Bala</button>
       </div>
     </div>
 
+    <!-- ============================================================
+         🎈 POIN PENTING: FULLSCREEN OVERLAY (Lightbox)
+         Div ini awalnya tersembunyi (display: none via CSS).
+         Saat kartu galeri diklik, overlay ini muncul dengan animasi
+         dan menampilkan gambar yang diperbesar penuh layar.
+         Klik di mana saja atau tekan Escape untuk menutupnya.
+    ================================================================ -->
     <div id="fs-overlay" onclick="closeFullscreen()">
+      <!-- src diisi secara dinamis oleh JavaScript saat kartu diklik -->
       <img id="fs-img" src="" alt="" />
+      <!-- Tombol X di pojok kanan atas untuk menutup overlay -->
       <button id="fs-close" onclick="closeFullscreen()">X</button>
     </div>
 
-    <audio id="scare-audio" src="Media/audio/mangaletp-funny-laughing-406018.mp3" preload="auto"></audio>
-  </div>
+    <!-- ============================================================
+         CUSTOM ALERT BOX
+         Pengganti alert() bawaan browser — lebih sesuai tema web.
+         Ditampilkan oleh fungsi showAlert() di JavaScript.
+    ================================================================ -->
+    <div id="custom-alert">
+      <div id="custom-alert-box">
+        <div id="custom-alert-icon">⚠️</div>
+        <p id="custom-alert-msg"></p>
+        <button id="custom-alert-btn" onclick="tutupAlert()">Oke, Mengerti</button>
+      </div>
+    </div>
 
+    <!-- 🎈 POIN PENTING: Elemen audio untuk efek suara
+         preload="auto" = file audio dimuat lebih awal agar tidak delay saat diputar -->
+    <audio id="scare-audio" src="Media/audio/mangaletp-funny-laughing-406018.mp3" preload="auto"></audio>
+
+  </div><!-- akhir .content -->
+
+  <!-- Impor script js untuk logikanya -->
   <script src="script.js"></script>
 </body>
+
 </html>

@@ -1,37 +1,53 @@
+/* ================================================================
+   🎈 POIN PENTING: CSS RESET
+   Menghapus margin, padding, dan box-sizing default dari browser
+   agar tampilan konsisten di semua browser
+================================================================ */
 * {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
+    box-sizing: border-box; /* Lebar elemen sudah termasuk border & padding */
 }
 
+/* 🎈 POIN PENTING: scroll-behavior: smooth membuat navigasi anchor (#section)
+   bergerak dengan animasi mulus, bukan langsung lompat */
 html { scroll-behavior: smooth; }
 
+/* Style dasar seluruh halaman: warna gelap khas tema horor */
 body {
-    font-family: "Roboto", sans-serif;
-    background-color: #1a1a1a;
-    color: #e0e0e0;
+    font-family: "Roboto", sans-serif; /* Font utama */
+    background-color: #1a1a1a;        /* Latar belakang sangat gelap */
+    color: #e0e0e0;                   /* Teks berwarna abu-abu terang */
 }
 
-/* DISCLAIMER */
+
+/* ================================================================
+   🎈 POIN PENTING: DISCLAIMER OVERLAY
+   position: fixed + inset: 0 = menutupi SELURUH layar (100% width & height)
+   z-index: 99999 = ditampilkan paling atas dari semua elemen
+   Menggunakan animasi CSS untuk efek muncul dan menghilang
+================================================================ */
 #disclaimer {
     position: fixed;
-    inset: 0;
+    inset: 0; /* Singkatan dari top:0, right:0, bottom:0, left:0 */
     z-index: 99999;
-    background: rgba(0, 0, 0, 0.85);
+    background: rgba(0, 0, 0, 0.85); /* Latar hitam 85% transparan */
     display: flex;
-    align-items: center;
-    justify-content: center;
+    align-items: center;    /* Tengah secara vertikal */
+    justify-content: center; /* Tengah secara horizontal */
     padding: 16px;
-    animation: disclaimerIn 0.4s ease forwards;
+    animation: disclaimerIn 0.4s ease forwards; /* Animasi muncul saat halaman dibuka */
 }
 
+/* Class ini ditambahkan JavaScript saat tombol "Lanjutkan" diklik */
 #disclaimer.disclaimer-hide {
-    animation: disclaimerOut 0.35s ease forwards;
+    animation: disclaimerOut 0.35s ease forwards; /* Animasi menghilang */
 }
 
+/* 🎈 POIN PENTING: @keyframes = mendefinisikan urutan animasi CSS */
 @keyframes disclaimerIn {
-    from { opacity: 0; }
-    to   { opacity: 1; }
+    from { opacity: 0; } /* Mulai dari transparan */
+    to   { opacity: 1; } /* Berakhir penuh terlihat */
 }
 
 @keyframes disclaimerOut {
@@ -45,6 +61,7 @@ body {
     max-width: 460px;
     width: 100%;
     padding: 32px 32px 28px;
+    /* Animasi kotak muncul dengan efek "melambung" dari bawah */
     animation: boxIn 0.4s cubic-bezier(0.22, 1, 0.36, 1) forwards;
 }
 
@@ -53,10 +70,7 @@ body {
     to   { transform: translateY(0) scale(1); opacity: 1; }
 }
 
-#disclaimer-icon {
-    font-size: 40px;
-    margin-bottom: 12px;
-}
+#disclaimer-icon { font-size: 40px; margin-bottom: 12px; }
 
 #disclaimer-box h2 {
     font-size: 22.4px;
@@ -65,11 +79,7 @@ body {
     margin-bottom: 4.8px;
 }
 
-.disclaimer-sub {
-    font-size: 14px;
-    color: #888;
-    margin-bottom: 17.6px;
-}
+.disclaimer-sub { font-size: 14px; color: #888; margin-bottom: 17.6px; }
 
 #disclaimer-list {
     list-style: none;
@@ -83,12 +93,7 @@ body {
     border: 1px solid #333;
 }
 
-#disclaimer-list li {
-    font-size: 14px;
-    color: #ccc;
-    line-height: 1.5;
-}
-
+#disclaimer-list li { font-size: 14px; color: #ccc; line-height: 1.5; }
 #disclaimer-list strong { color: #f0f0f0; }
 
 #disclaimer-confirm {
@@ -100,12 +105,13 @@ body {
 }
 
 #disclaimer-btns {
-    display: flex;
+    display: flex; /* Dua tombol berdampingan */
     gap: 12px;
 }
 
+/* Tombol utama (lanjutkan) berwarna terang */
 #btn-lanjut {
-    flex: 1;
+    flex: 1; /* Mengisi sisa ruang yang tersedia */
     background: #eee;
     color: #111;
     border: none;
@@ -114,11 +120,12 @@ body {
     font-size: 14px;
     font-weight: 600;
     cursor: pointer;
-    transition: background 0.2s;
+    transition: background 0.2s; /* Animasi hover halus */
 }
 
 #btn-lanjut:hover { background: #fff; }
 
+/* Tombol sekunder (keluar) berwarna gelap */
 #btn-keluar {
     flex: 1;
     background: #2a2a2a;
@@ -134,213 +141,195 @@ body {
 
 #btn-keluar:hover { background: #333; border-color: #555; }
 
-/* NAVBAR */
+
+/* ================================================================
+   🎈 POIN PENTING: NAVBAR
+   position: fixed + top: 0 = navbar menempel di atas layar
+   z-index: 999 = di atas konten halaman (tapi di bawah disclaimer)
+   display: flex + justify-content: space-between = logo | nav | avatar
+================================================================ */
 .header {
     width: 100%;
     height: 60px;
     background-color: #111;
     border-bottom: 1px solid #2a2a2a;
     display: flex;
-    justify-content: space-between;
-    align-items: center;
+    justify-content: space-between; /* Elemen tersebar: kiri - tengah - kanan */
+    align-items: center;            /* Rata tengah secara vertikal */
     padding: 0 32px;
     position: fixed;
     top: 0;
     z-index: 999;
 }
 
-.logo-img {
-    height: 60px;
-    width: auto;
-}
+.logo-img { height: 60px; width: auto; }
 
-.header nav {
-    display: flex;
-    gap: 4px;
-}
+.header nav { display: flex; gap: 4px; }
 
+/* Style link navbar */
 .header nav a {
-    text-decoration: none;
+    text-decoration: none; /* Hapus garis bawah link bawaan browser */
     color: #aaa;
     font-size: 14.4px;
     font-weight: 500;
     padding: 6.4px 14.4px;
     border-radius: 6px;
-    transition: background 0.2s, color 0.2s;
+    transition: background 0.2s, color 0.2s; /* Efek hover halus */
 }
 
+/* 🎈 POIN PENTING: .active adalah class yang ditambahkan JavaScript
+   saat link tersebut sesuai dengan section yang sedang dilihat */
 .header nav a:hover, 
 .header nav a.active {
     background-color: #222;
     color: #fff;
 }
 
+/* Foto profil bulat di pojok kanan navbar */
 .profil-avatar {
     width: 36px;
     height: 36px;
-    border-radius: 50%;
+    border-radius: 50%; /* Membuat gambar menjadi lingkaran */
     object-fit: cover;
     border: 2px solid #444;
     background: #2a2a2a;
 }
 
-/* CONTENT */
+
+/* ================================================================
+   CONTENT & SECTIONS
+================================================================ */
+
+/* padding-top: 60px agar konten tidak tertutup navbar yang fixed */
 .content { padding-top: 60px; }
 
-/* SECTIONS COMMON */
+/* Style dasar yang berlaku untuk semua section */
 .section-home, .section-profil, .section-gallery, .section-contact {
     padding: 64px 96px;
-    border-bottom: 1px solid #2a2a2a;
+    border-bottom: 1px solid #2a2a2a; /* Garis pemisah antar section */
 }
 
-/* HOME */
-.section-home h1 {
-    font-size: 32px;
-    font-weight: 700;
-    margin-bottom: 16px;
-}
+/* SECTION HOME */
+.section-home h1 { font-size: 32px; font-weight: 700; margin-bottom: 16px; }
+.section-home p { font-size: 16px; line-height: 1.8; color: #aaa; max-width: 680px; }
 
-.section-home p {
-    font-size: 16px;
-    line-height: 1.8;
-    color: #aaa;
-    max-width: 680px;
-}
 
-/* PROFIL */
-.section-profil {
-    display: flex;
-    align-items: center;
-    gap: 48px;
-}
+/* ================================================================
+   🎈 POIN PENTING: SECTION PROFIL - FLEXBOX
+   display: flex membuat gambar dan teks berdampingan (horizontal)
+   gap: 48px = jarak antara gambar dan teks
+================================================================ */
+.section-profil { display: flex; align-items: center; gap: 48px; }
 
+/* Gambar profil dengan ukuran tetap */
 .section-profil > img {
     width: 100%;
     max-width: 350px;
     height: 250px;
-    object-fit: cover;
+    object-fit: cover;  /* Gambar dipotong agar pas di kotak, tidak terdistorsi */
     border-radius: 10px;
     border: 2px solid #333;
     background: #2a2a2a;
-    flex-shrink: 0;
+    flex-shrink: 0; /* Gambar tidak mengecil meskipun ruang sempit */
 }
 
-.deskripsi h1 {
-    font-size: 25.6px;
-    font-weight: 700;
-    margin-bottom: 6.4px;
-}
+.deskripsi h1 { font-size: 25.6px; font-weight: 700; margin-bottom: 6.4px; }
+.deskripsi h3 { font-size: 16px; font-weight: 500; color: #e05555; margin-bottom: 12px; }
+.deskripsi p  { font-size: 15.2px; line-height: 1.7; color: #aaa; max-width: 500px; }
 
-.deskripsi h3 {
-    font-size: 16px;
-    font-weight: 500;
-    color: #e05555;
-    margin-bottom: 12px;
-}
 
-.deskripsi p {
-    font-size: 15.2px;
-    line-height: 1.7;
-    color: #aaa;
-    max-width: 500px;
-}
-
-/* GALLERY */
-.section-gallery h1 {
-    font-size: 25.6px;
-    font-weight: 700;
-    margin-bottom: 32px;
-}
+/* ================================================================
+   🎈 POIN PENTING: SECTION GALERI - CSS GRID
+   display: grid + grid-template-columns: repeat(3, 1fr) 
+   = membuat layout 3 kolom otomatis dengan lebar sama rata
+   gap: 20px = jarak antar kartu
+================================================================ */
+.section-gallery h1 { font-size: 25.6px; font-weight: 700; margin-bottom: 32px; }
 
 .section-gallery ul {
     list-style: none;
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(3, 1fr); /* 3 kolom, masing-masing 1 bagian ruang */
     gap: 20px;
 }
 
-/* Card */
+
+/* ================================================================
+   CARD GALERI
+   transition: box-shadow + transform membuat efek hover interaktif
+================================================================ */
 .card {
     background: #222;
     border-radius: 10px;
-    overflow: hidden;
+    overflow: hidden; /* Gambar tidak meluap dari card saat di-zoom */
     border: 1px solid #333;
     cursor: pointer;
     transition: box-shadow 0.2s, transform 0.2s;
 }
 
-.card:hover {
-    box-shadow: 0 6px 20px rgba(0,0,0,0.4);
-    transform: translateY(-2px);
-}
+/* Kartu naik sedikit saat di-hover */
+.card:hover { box-shadow: 0 6px 20px rgba(0,0,0,0.4); transform: translateY(-2px); }
 
-.card-img {
-    width: 100%;
-    height: 220px;
-    overflow: hidden;
-    background: #2a2a2a;
-}
+.card-img { width: 100%; height: 220px; overflow: hidden; background: #2a2a2a; }
 
 .card-img img {
     width: 100%;
     height: 100%;
     object-fit: cover;
     display: block;
-    transition: transform 0.4s ease;
+    transition: transform 0.4s ease; /* Animasi zoom gambar saat hover */
 }
 
-.card:hover .card-img img {
-    transform: scale(1.07);
-}
+/* 🎈 POIN PENTING: Efek zoom gambar saat kartu di-hover 
+   Menggunakan CSS selector berantai: .card:hover .card-img img */
+.card:hover .card-img img { transform: scale(1.07); }
 
 .card-body {
     padding: 13.6px 16px 17.6px;
     min-height: 90px;
     display: flex;
-    flex-direction: column;
+    flex-direction: column; /* Judul di atas, deskripsi di bawah */
     gap: 5.6px;
 }
 
-.card-body p {
-    font-size: 14.4px;
-    font-weight: 600;
-    color: #e0e0e0;
-    margin: 0;
-}
+.card-body p    { font-size: 14.4px; font-weight: 600; color: #e0e0e0; margin: 0; }
+.card-body span { font-size: 12.8px; color: #888; line-height: 1.5; }
 
-.card-body span {
-    font-size: 12.8px;
-    color: #888;
-    line-height: 1.5;
-}
 
-/* FULLSCREEN OVERLAY */
+/* ================================================================
+   🎈 POIN PENTING: FULLSCREEN OVERLAY (Lightbox / Galeri Besar)
+   Awalnya display: none (tersembunyi).
+   Kelas "show" ditambahkan JavaScript untuk menampilkannya.
+   Kelas "hide" ditambahkan JavaScript untuk menyembunyikannya kembali.
+================================================================ */
 #fs-overlay {
-    display: none;           
+    display: none;   /* Tersembunyi secara default */
     position: fixed;
     inset: 0;
     z-index: 9999;
-    background: #000;
+    background: #000; /* Latar hitam penuh */
     align-items: center;
     justify-content: center;
     cursor: pointer;
 }
 
+/* Saat class "show" ditambahkan: tampilkan dengan animasi masuk */
 #fs-overlay.show {
     display: flex;
     animation: fsIn 0.18s cubic-bezier(0.22, 1, 0.36, 1) forwards;
 }
 
-#fs-overlay.hide {
-    animation: fsOut 0.2s ease forwards;
-}
+/* Saat class "hide" ditambahkan: animasi keluar */
+#fs-overlay.hide { animation: fsOut 0.2s ease forwards; }
 
+/* Animasi gambar membesar dari tengah saat muncul */
 @keyframes fsIn {
     0%   { opacity: 0; transform: scale(0.4); }
     60%  { opacity: 1; transform: scale(1.06); }
     100% { opacity: 1; transform: scale(1); }
 }
 
+/* Animasi gambar mengecil sambil memudar saat ditutup */
 @keyframes fsOut {
     0%   { opacity: 1; transform: scale(1); }
     100% { opacity: 0; transform: scale(1.1); }
@@ -351,11 +340,12 @@ body {
     max-height: 100%;
     width: 100%;
     height: 100%;
-    object-fit: contain;
-    pointer-events: none;
-    user-select: none;
+    object-fit: contain; /* Tampilkan gambar penuh tanpa terpotong */
+    pointer-events: none; /* Klik pada gambar menembus ke overlay (bukan stuck di gambar) */
+    user-select: none;    /* Gambar tidak bisa diselect/drag */
 }
 
+/* Tombol X di pojok kanan atas */
 #fs-close {
     position: absolute;
     top: 16px;
@@ -376,9 +366,13 @@ body {
 
 #fs-close:hover { background: rgba(255,255,255,0.3); }
 
-/* CONTACT */
+
+/* ================================================================
+   SECTION CONTACT / FORM
+================================================================ */
 .section-contact { display: flex; justify-content: center; }
 
+/* Kotak form dengan border putus-putus */
 .contact-form-card {
     width: 100%;
     max-width: 620px;
@@ -394,7 +388,7 @@ body {
     font-size: 11.52px;
     font-weight: 700;
     letter-spacing: 0.08em;
-    text-transform: uppercase;
+    text-transform: uppercase; /* Teks otomatis jadi huruf kapital */
     background: #eee;
     color: #111;
     border-radius: 20px;
@@ -409,14 +403,10 @@ body {
     margin-bottom: 24px;
 }
 
-.form-card-top h3 {
-    font-size: 20.8px;
-    font-weight: 700;
-    color: #f0f0f0;
-    margin-bottom: 4px;
-}
-
+.form-card-top h3 { font-size: 20.8px; font-weight: 700; color: #f0f0f0; margin-bottom: 4px; }
 .form-sub { font-size: 13.12px; color: #777; }
+
+/* Garis pemisah bagian form */
 .form-divider { border: none; border-top: 1px dashed #333; margin: 20px 0; }
 
 .form-section-label {
@@ -429,12 +419,8 @@ body {
     text-transform: uppercase;
 }
 
-.form-group {
-    display: flex;
-    flex-direction: column;
-    gap: 5.6px;
-    margin-bottom: 16px;
-}
+/* Wrapper tiap input beserta label-nya */
+.form-group { display: flex; flex-direction: column; gap: 5.6px; margin-bottom: 16px; }
 
 .form-group label {
     font-size: 11.52px;
@@ -444,24 +430,28 @@ body {
     color: #888;
 }
 
+/* 🎈 POIN PENTING: Input tanpa border di sisi lain, hanya border-bottom
+   Memberikan kesan minimalis dan modern */
 .form-group input,
 .form-group textarea {
     border: none;
-    border-bottom: 1px solid #444;
+    border-bottom: 1px solid #444; /* Hanya garis bawah */
     padding: 8px 4px;
     font-size: 14px;
     font-family: "Roboto", sans-serif;
     color: #e0e0e0;
-    outline: none;
-    background: transparent;
+    outline: none;        /* Hilangkan kotak fokus bawaan browser */
+    background: transparent; /* Transparan agar menyatu dengan latar kartu */
     transition: border-color 0.2s;
     width: 100%;
 }
 
+/* Garis bawah berubah lebih terang saat input difokus */
 .form-group input:focus, .form-group textarea:focus { border-bottom-color: #aaa; }
 .form-group input::placeholder, .form-group textarea::placeholder { color: #555; }
-.form-group textarea { resize: none; height: 110px; }
+.form-group textarea { resize: none; height: 110px; } /* Textarea tidak bisa diubah ukurannya */
 
+/* Style untuk elemen dropdown select */
 .form-group select {
     border: none;
     border-bottom: 1px solid #444;
@@ -474,18 +464,22 @@ body {
     transition: border-color 0.2s;
     width: 100%;
     cursor: pointer;
-    appearance: none;
-    -webkit-appearance: none;
+    appearance: none;         /* Hilangkan tampilan default OS */
+    -webkit-appearance: none; /* Untuk browser Safari */
 }
 
 .form-group select:focus { border-bottom-color: #aaa; }
 .form-group select option[disabled] { color: #555; }
 .form-group select option { background: #222; color: #e0e0e0; }
+
+/* 🎈 POIN PENTING: .form-row menggunakan CSS Grid 2 kolom
+   agar dua input bisa ditampilkan berdampingan dalam satu baris */
 .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
 
+/* Tombol submit form */
 .btn-kirim {
     margin-top: 8px;
-    background: #2d6a4f;
+    background: #2d6a4f; /* Warna hijau gelap */
     color: #fff;
     border: none;
     border-radius: 8px;
@@ -502,18 +496,95 @@ body {
 
 .btn-kirim:hover { background: #1b4332; transform: translateY(-1px); }
 
-/* SCROLL MARGIN */
+
+/* ================================================================
+   🎈 POIN PENTING: SCROLL MARGIN
+   Agar saat klik link navbar, halaman tidak berhenti tepat di 
+   tepi section — melainkan 60px lebih bawah (supaya tidak tertutup navbar)
+================================================================ */
 #home, #section-profil, #gallery, #contact { scroll-margin-top: 60px; }
 
-/* RESPONSIVE FOR MOBILE */
+
+/* ================================================================
+   CUSTOM ALERT BOX
+   Struktur dan animasi sama dengan disclaimer agar konsisten
+================================================================ */
+#custom-alert {
+    display: none; /* Tersembunyi secara default */
+    position: fixed;
+    inset: 0;
+    z-index: 99999;
+    background: rgba(0, 0, 0, 0.75);
+    align-items: center;
+    justify-content: center;
+    padding: 16px;
+}
+
+/* Saat class "show" ditambahkan JS: tampilkan dengan animasi */
+#custom-alert.show {
+    display: flex;
+    animation: disclaimerIn 0.25s ease forwards;
+}
+
+#custom-alert-box {
+    background: #222;
+    border: 1px solid #3a3a3a;
+    border-radius: 14px;
+    max-width: 360px;
+    width: 100%;
+    padding: 28px 28px 24px;
+    text-align: center;
+    animation: boxIn 0.3s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+#custom-alert-icon {
+    font-size: 36px;
+    margin-bottom: 12px;
+}
+
+#custom-alert-msg {
+    font-size: 14.4px;
+    color: #ddd;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+#custom-alert-btn {
+    background: #eee;
+    color: #111;
+    border: none;
+    border-radius: 8px;
+    padding: 10px 28px;
+    font-size: 13.6px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+#custom-alert-btn:hover { background: #fff; }
+
+
+/* ================================================================
+   🎈 POIN PENTING: RESPONSIVE DESIGN — MEDIA QUERY
+   @media (max-width: 768px) = CSS di dalam ini HANYA aktif
+   saat lebar layar 768px atau lebih kecil (biasanya smartphone)
+   Ini membuat tampilan web tetap bagus di HP maupun PC
+================================================================ */
 @media (max-width: 768px) {
     .header { padding: 0 16px; }
-    .logo-img { display: none; }
+    .logo-img { display: none; } /* Sembunyikan logo di HP agar navbar tidak penuh */
     .header nav a { font-size: 12.8px; padding: 5.6px 9.6px; }
     
+    /* Kurangi padding section di HP */
     .section-home, .section-profil, .section-gallery, .section-contact { padding: 40px 20px; }
+    
+    /* Profil jadi vertikal (gambar di atas, teks di bawah) */
     .section-profil { flex-direction: column; align-items: flex-start; }
     .section-profil > img { max-width: 100%; height: 220px; }
+    
+    /* Galeri jadi 2 kolom di HP (dari 3 kolom di PC) */
     .section-gallery ul { grid-template-columns: repeat(2, 1fr); }
+    
+    /* Form row jadi 1 kolom di HP */
     .form-row { grid-template-columns: 1fr; }
 }
